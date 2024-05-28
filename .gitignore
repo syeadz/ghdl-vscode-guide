@@ -1,0 +1,6 @@
+# Ignore waveform folder if needed
+/wf
+
+# Ignore build files
+*.o
+*.cf
