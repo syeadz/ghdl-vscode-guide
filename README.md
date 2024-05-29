@@ -6,6 +6,16 @@ After following this guide, you should be able to build and test VHDL components
 
 **WARNING:** Some components and testbenches behave unexpectedly on Quartus and the Altera board.
 
+## Screenshots
+
+### VSCode with TerosHDL Error Checking
+
+![TerosHDL Error Checking](screenshots/vscode1.png)
+
+### GTKWave Waveform Analysis
+
+![GTKWave Waveform Analysis](screenshots/gtkwave1.png)
+
 ## Prerequisites
 
 - **Linux OS or WSL on Windows** (to run Bash scripts and commands)
@@ -58,7 +68,7 @@ This runs the testbench and creates a VCD file that you can analyze using GTKWav
 
 ## Quickstart Building and Testing adder1bit
 
-Run the following commands in the terminal to build and test the adder1bit. You can either run the commands manually or use the provided scripts.
+Run the following commands in the terminal to build and test the adder1bit. You can either run the commands manually or use the provided scripts. With scripts, only a **single command** is needed to build and test the component.
 
 ### Manually
 
@@ -78,7 +88,7 @@ ghdl -r adder1bit_tb --vcd="wf/adder1bit.vcd"
 
 ### With Scripts (Recommended)
 
-Refer to the "Information on Scripts" section for details on what each script does. **Make sure that the testbench is named `<component name>_tb.vhd`**.
+Refer to the "Information on Scripts" section for details on what each script does. **Make sure that any testbench is named `<component name>_tb.vhd`**.
 
 ```sh
 # Test script automatically builds both adder1bit.vhd and adder1bit_tb.vhd. Also creates the waveform folder.
@@ -123,7 +133,7 @@ This script builds a single `.vhd` file.
 
 Usage: `./s_test.sh <file name without extension>`
 
-This script builds a single `.vhd` file and its testbench, runs the simulation, and creates a VCD file. **Make sure that the testbench is named `<component name>_tb.vhd`**. Note there is a commented line in the script to automatically delete the testbench executable after running the simulation. On certain systems there is no executable generated, but on others it is. Uncomment the line if you want less clutter. Also creates the waveform folder if it doesn't exist.
+This script builds a single `.vhd` file and its testbench, runs the simulation, and creates a VCD file. **Make sure that any testbench is named `<component name>_tb.vhd`**. Note there is a commented line in the script to automatically delete the testbench executable after running the simulation. On certain systems there is no executable generated, but on others it is. Uncomment the line if you want less clutter. Also creates the waveform folder if it doesn't exist.
 
 ### s_clean.sh
 
